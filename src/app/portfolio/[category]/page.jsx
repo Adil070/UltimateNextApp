@@ -5,7 +5,7 @@ import Image from "next/image";
 import { items } from "./data.js";
 import { notFound } from "next/navigation";
 
-const getData = (cat) => {
+const getData = cat => {
   const data = items[cat];
 
   if (data) {
@@ -21,7 +21,7 @@ const Category = ({ params }) => {
     <div className={styles.container}>
       <h1 className={styles.catTitle}>{params.category}</h1>
 
-      {data.map((item) => (
+      {data.map(item => (
         <div className={styles.item} key={item.id}>
           <div className={styles.content}>
             <h1 className={styles.title}>{item.title}</h1>
@@ -29,12 +29,7 @@ const Category = ({ params }) => {
             <Button text="See More" url="#" />
           </div>
           <div className={styles.imgContainer}>
-            <Image
-              className={styles.img}
-              fill={true}
-              src={item.image}
-              alt=""
-            />
+            <Image className={styles.img} fill={true} src={item.image} alt="" />
           </div>
         </div>
       ))}
